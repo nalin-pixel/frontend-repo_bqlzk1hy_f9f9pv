@@ -1,28 +1,25 @@
-import { useState } from 'react'
+import React from 'react';
+import Hero3D from './components/Hero3D';
+import CountdownTimer from './components/CountdownTimer';
+import EventDetails from './components/EventDetails';
+import RSVPForm from './components/RSVPForm';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Target wedding date for the countdown
+  const targetDate = 'December 14, 2025 10:00:00';
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen w-full bg-white text-neutral-900">
+      <Hero3D />
+      <CountdownTimer targetDate={targetDate} />
+      <EventDetails />
+      <RSVPForm />
+
+      <footer className="w-full bg-rose-50 py-8 text-center text-sm text-neutral-600">
+        Made with love for family and friends • Aditi & Arjun
+      </footer>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
